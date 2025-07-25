@@ -1,0 +1,113 @@
+.futureContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  width: 100%;
+}
+.futureHeader {
+  font-size: 2.5rem;
+  color: #382020;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.futureRow {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+.image,
+.image2 {
+  width: 150px;
+  height: auto;
+}
+
+.futureTextContainer {
+  width: 27%;
+}
+
+.futureText {
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "StaffTestRegular";
+}
+
+@media (max-width: 900px) {
+  .futureRow {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .futureTextContainer {
+    width: 80%;
+    order: 1;
+  }
+
+  .futureText {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .image {
+    width: 100px;
+    height: auto;
+  }
+
+  .futureRow .image-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+    width: 100%;
+  }
+  .image2 {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .futureRow {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .futureTextContainer {
+    width: 65%;
+    order: 1;
+  }
+
+  .futureText {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .image {
+    width: 100px;
+    height: auto;
+  }
+
+  .futureRow .image-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+    width: 100%;
+  }
+  .image2 {
+    display: none;
+  }
+}

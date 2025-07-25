@@ -1,0 +1,52 @@
+.sliderContainer {
+  position: relative;
+  width: 250px;
+  aspect-ratio: 350px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.baseImage,
+.overlayImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.overlayImage {
+  z-index: 1;
+}
+
+.baseImage,
+.overlayImage:hover {
+  transform: scale(1.05);
+}
+
+.sliderLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(255, 134, 91, 100%);
+  z-index: 2;
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  cursor: ew-resize;
+  z-index: 3;
+  touch-action: none;
+  pointer-events: auto;
+}

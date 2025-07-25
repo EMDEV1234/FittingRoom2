@@ -1,0 +1,297 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(#f6f6ea, #f7e7ce, #f6f6ea);
+  font-family: "StaffWideTest";
+  color: #382020;
+}
+
+.header {
+  font-size: 3rem;
+  margin-top: 30px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.uploadSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "StaffTestRegular";
+  font-weight: 100;
+  width: 200px;
+  height: 150px;
+}
+
+.uploadText {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.imageTextUpload {
+  background-color: #f7e7ce;
+  color: #382020;
+  border-radius: 30px;
+  padding: 4px 6px;
+}
+
+.dropzones {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dropzoneContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.dropzone,
+.previewWrapper {
+  width: 300px;
+  height: 400px;
+  max-width: 90vw;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #382020;
+  background-color: #fafafa;
+  cursor: pointer;
+  position: relative;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  object-fit: cover;
+  /* object-position: center; */
+  border-radius: 16px;
+}
+
+.clothImageInput {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 10px; */
+}
+.personImageInput {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 10px; */
+}
+
+/* .preview:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+} */
+
+.descriptionWrapper {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.descriptionLabel {
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.descriptionInput {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 300px;
+  max-width: 90vw;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-family: "StaffTestRegular";
+}
+
+.removeButton {
+  all: unset;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 18px;
+  font-family: "StaffTestRegular";
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+}
+.removeButton:hover {
+  background: rgba(255, 255, 255, 0.65);
+  color: black;
+  border: 1px solid black;
+}
+
+.exampleCarouselContainer {
+  /* margin-top: 0; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.generateButton {
+  padding: 0.5rem 1.25rem;
+  font-size: 1.25rem;
+  background-color: #382020;
+  color: #f6f6ea;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.generateButton:disabled {
+  font-family: "StaffWideTest";
+  color: #f6f6ea;
+  background-color: #382020;
+  cursor: not-allowed;
+}
+
+.generateButton:hover {
+  background-color: #f6f6ea;
+  color: #382020;
+  border: 1px solid #382020;
+}
+
+.resultWrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* overflow: hidden; */
+}
+
+.resultImage {
+  width: 300px;
+  height: 400px;
+  max-width: 90vw;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.saveOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.saveButton {
+  padding: 0.8rem 2rem;
+  margin-top: 15px;
+  font-size: 1rem;
+  background-color: #382020;
+  color: #f6f6ea;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+.addFav {
+  padding: 0.8rem 2rem;
+  margin-top: 15px;
+  font-size: 1rem;
+  background-color: #382020;
+  color: #f6f6ea;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+.carouselContainer {
+  margin-top: 50px;
+  width: 100%;
+}
+.tagContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tagUs {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .dropzones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropzone,
+  .previewWrapper,
+  .resultImage {
+    width: 90vw;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .exampleCarouselContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .generateButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .removeButton {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
+
+  .exampleCarouselContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,26 @@
+.clickIconWrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.clickIconWrapper::before {
+  content: "";
+  position: absolute;
+  top: 28%;
+  left: 29%;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff865b 0%, transparent 100%);
+  filter: blur(5px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.clickIcon {
+  font-size: 3rem;
+  color: black;
+  position: relative;
+  z-index: 1;
+}

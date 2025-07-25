@@ -1,0 +1,35 @@
+.cardWrapper {
+  padding: 3rem 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-margin-top: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardContainer {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  min-height: 50vh;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1180px) {
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cardContainer {
+    /* padding: 1rem; */
+    min-height: 50vh;
+    opacity: 1 !important;
+  }
+}

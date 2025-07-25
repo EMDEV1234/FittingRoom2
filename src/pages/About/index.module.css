@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff4c6;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.blurb {
+  font-size: 2rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 0px;
+
+  /* background-color: bisque; */
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.Different {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 0px;
+}
+
+.differentList li {
+  margin-bottom: 10px;
+}
+
+.Mission {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 0px;
+}
+
+.Future {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 0px;
+}

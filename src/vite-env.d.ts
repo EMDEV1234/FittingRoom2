@@ -1,0 +1,13 @@
+declare module "*.module.css";
+declare module "*.jpg";
+declare module "*.png";
+declare module "*.svg";
+declare module "*.mp4";
+declare module "*.JPEG";
+declare module "*.jpeg";
+declare module "*.JPG";
+declare module "*.webp";
+declare module "motion/react-client";
+declare module "motion/react";
+declare module "*.css";
+// declare module "@gradio/client";

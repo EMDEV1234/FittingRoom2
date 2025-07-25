@@ -1,0 +1,65 @@
+.whyFTContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #382020;
+}
+.whyFTHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+}
+.topHeader {
+  text-align: center;
+  font-size: 2rem;
+  align-self: center;
+}
+.subHeader {
+  text-align: center;
+  font-size: 1.75rem;
+  align-self: center;
+}
+.bubbleText {
+  background-color: #f7e7ce;
+  color: #382020;
+  border-radius: 30px;
+  padding: 2px 7px;
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .topHeader {
+    font-size: 2.25rem;
+  }
+  .subHeader {
+    font-size: 1.65rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .topHeader {
+    font-size: 2rem;
+  }
+  .subHeader {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .topHeader {
+    font-size: 1.75rem;
+  }
+  .subHeader {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .topHeader {
+    font-size: 1.5rem;
+  }
+  .subHeader {
+    font-size: 1.1rem;
+  }
+}

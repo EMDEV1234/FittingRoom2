@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 40vh;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.clearButton {
+  padding: 0.5rem 1rem;
+  background: #f6f6ea;
+  color: #382020;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  align-self: center;
+  margin-top: auto;
+}
+
+.clearButton:hover {
+  background: #f7e7ce;
+}
+
+.emptyMessage {
+  color: #888;
+  font-style: italic;
+}
+
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.removeBtn {
+  all: unset;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 18px;
+  font-family: "StaffWideTest";
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+}
+.removeBtn:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+}

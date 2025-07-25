@@ -1,0 +1,304 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f6ea;
+  font-family: "StaffWideTest";
+  width: 100%;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+}
+
+.RotatingTextContainer {
+  font-family: "StaffWideTest";
+  color: #382020;
+  width: 100vw;
+  font-size: 36px;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  margin-top: 50px;
+  font-size: 3.5rem;
+  margin-bottom: 0px;
+  align-self: center;
+}
+
+.clickIcon {
+  align-self: self-end;
+  margin-top: 10px;
+}
+
+.floatingTextContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingText {
+  font-size: 2rem;
+  color: #a5b7e5;
+  align-self: center;
+}
+
+.introSection {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.introText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introSection h2 {
+  padding: 15px 30px;
+  background-color: #f7e7ce;
+  border-radius: 999px;
+  color: #382020;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.ourMissionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  flex-wrap: nowrap;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 3rem;
+}
+
+.missionBox {
+  padding: 2rem;
+  border-radius: 999px;
+  font-family: "StaffTestRegular";
+  font-size: 1.5rem;
+  background-color: #f6f6ea;
+  color: #382020;
+  box-shadow: 0px 0px 12px 8px rgba(249, 222, 177, 0.5);
+  min-width: 200px;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.missionBox p {
+  font-family: "StaffTestRegular";
+  margin: 0;
+  line-height: 1.5rem;
+  min-height: calc(1.5rem * 4);
+  display: block;
+  white-space: normal;
+  color: #382020;
+}
+
+.missionOne {
+  color: white;
+}
+
+.missionTwo,
+.missionThree {
+  background-color: #f6f6ea;
+}
+
+.whyFittingRoom {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fefcec;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.Possibilities {
+  width: 100%;
+}
+
+.aboutContainer {
+  width: 100vw;
+  color: #382020;
+  background-color: #f6f6ea;
+}
+
+.aboutText {
+  margin-left: 175px;
+  margin-right: 175px;
+  font-size: 1.5rem;
+  font-family: "StaffTestRegular";
+}
+
+.behindTheCurtainContainer {
+  width: 100%;
+  color: #382020;
+  background-color: #f6f6ea;
+  justify-content: center;
+  align-items: center;
+}
+
+.closingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#f7e7ce, #f6f6ea, #ffffff, #f6f6ea, #f7e7ce);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .header {
+    padding: 2rem 1.5rem;
+  }
+  .missionBox {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ourMissionContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .missionBox {
+    font-size: 1.4rem;
+    padding: 1.75rem;
+  }
+  .missionBox p {
+    font-family: "StaffTestRegular";
+    margin: 0;
+    line-height: 1.5rem;
+    min-height: calc(1.5rem * 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #382020;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .header {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .ourMissionContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .missionBox {
+    max-width: 90vw;
+    font-size: 1.25rem;
+    padding: 1.5rem;
+  }
+  .missionBox p {
+    font-family: "StaffTestRegular";
+    margin: 0;
+    line-height: 1.5rem;
+    min-height: calc(1.5rem * 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #382020;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .header {
+    padding: 1.25rem 1rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ourMissionContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .missionBox {
+    max-width: 95vw;
+    font-size: 1.1rem;
+    padding: 1.25rem;
+  }
+  .missionBox p {
+    font-family: "StaffTestRegular";
+    margin: 0;
+    line-height: 1.5rem;
+    min-height: calc(1.5rem * 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #382020;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .header {
+    width: 90%;
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+  .RotatingTextContainer {
+    font-size: 26px;
+    min-height: 6rem;
+  }
+}

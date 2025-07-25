@@ -1,0 +1,240 @@
+.container {
+  padding: 4rem 0 0 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+.btcHeader {
+  font-size: 3rem;
+  text-align: center;
+  color: #382020;
+  align-self: center;
+  margin-bottom: 0px;
+  font-family: "StaffWideTest";
+}
+.headerIcon {
+  width: 75px;
+  height: 75px;
+  align-self: flex-end;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* important: top align image and textGroup */
+  gap: 8rem;
+  position: relative;
+  margin-top: -80px;
+}
+
+.image {
+  width: 300px;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imageGroup {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.textBox {
+  font-family: "StaffTestRegular";
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 2rem; /* pushes text box lower than image */
+}
+
+.row2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  flex-wrap: wrap;
+  margin-top: 6rem;
+}
+
+.cornerIcon {
+  position: absolute;
+  bottom: 0px;
+  left: -10px;
+  width: 75px;
+}
+
+/* .arrow {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+} */
+.arrowTop {
+  width: 250px;
+  margin-bottom: 1.5rem;
+  transform: translateX(-75px);
+  /* transform: translateY(-25px); */
+}
+.arrowRight {
+  width: 500px;
+  position: absolute;
+  top: -110px;
+  left: 24%;
+  height: auto;
+  z-index: 1;
+}
+
+.textBox2 {
+  font-family: "StaffTestRegular";
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  margin-right: 5rem;
+  margin-top: 1.5rem;
+}
+.text3 {
+  /* background: linear-gradient(#F6F6EA,#fefcec,#fefcec); */
+
+  background-color: #fefcec;
+  width: 100%;
+  font-family: "StaffTestRegular";
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text3 p {
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  align-self: center;
+  color: #382020;
+  line-height: 2rem;
+}
+
+@media (max-width: 1180px) {
+  .headerIcon {
+    margin-top: 1rem;
+    width: 40px;
+    height: auto;
+  }
+  .row2 {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .textBox2 {
+    order: 1;
+    margin: 0 auto;
+    margin-top: -1rem;
+  }
+
+  .arrowRight {
+    order: 2;
+    position: static;
+    width: 300px;
+    transform: none;
+    margin-bottom: 0rem;
+  }
+
+  .imageGroup {
+    order: 3;
+    justify-content: center;
+  }
+
+  .cornerIcon {
+    order: 4;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: 40px;
+  }
+  .textBox {
+    font-size: 1.2rem;
+  }
+  .textBox2 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    gap: 1rem;
+    margin-top: -2rem;
+    /* margin-bottom: 2rem; */
+  }
+  .btcHeader {
+    font-size: 2rem;
+  }
+  .headerIcon {
+    width: 40px;
+    height: 40px;
+  }
+  .row {
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+  .image {
+    width: 140px;
+    height: 185px;
+  }
+  .arrowTop {
+    width: 120px;
+    transform: translateX(-10%);
+    transform: translateY(-60%);
+  }
+  .textBox,
+  .textBox2 {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    max-width: 200px;
+  }
+  .arrowRight {
+    width: 150px;
+    margin: 0.5rem auto;
+  }
+  .cornerIcon {
+    display: none;
+  }
+  .text3 {
+    font-size: 0.75rem;
+  }
+  .text3 p {
+    font-size: 0.75rem;
+    width: 95%;
+    padding: 4px;
+    line-height: 1.3rem;
+  }
+  .row2 {
+    margin-bottom: 2rem;
+  }
+}
