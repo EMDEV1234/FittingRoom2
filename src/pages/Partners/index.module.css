@@ -287,10 +287,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin: 4rem 0;
+  gap: 14rem;
+  margin: 1rem 0;
   width: 100%;
-  max-width: 1000px;
+  max-width: 600px;
 }
 
 .imageContainer {
@@ -302,7 +302,7 @@
 
 .additionalImage {
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(56, 32, 32, 0.15);
@@ -310,30 +310,30 @@
 }
 
 .additionalImage:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) ;
   box-shadow: 0 8px 24px rgba(56, 32, 32, 0.25);
 }
 
 @media screen and (max-width: 768px) {
   .additionalImages {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     margin: 3rem 0;
   }
   
   .additionalImage {
-    max-width: 200px;
+    max-width: 150px;
   }
 }
 
 .socialImages {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 8rem;
   margin: 4rem 0;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .socialImageContainer {
@@ -372,7 +372,7 @@
 @media screen and (max-width: 768px) {
   .socialImages {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 3rem 0;
   }
   

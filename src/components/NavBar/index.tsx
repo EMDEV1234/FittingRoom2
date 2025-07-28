@@ -33,17 +33,6 @@ const Navbar: React.FC = () => {
         <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ""}`}>
           <li>
             <NavLink
-              to="/partners"
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                isActive ? styles.activePartners : styles.navButton
-              }
-            >
-              Partners
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/tryon"
               onClick={closeMenu}
               className={({ isActive }) =>
@@ -73,6 +62,17 @@ const Navbar: React.FC = () => {
               }
             >
               Shopping
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/partners"
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? styles.activePartners : styles.navButton
+              }
+            >
+              Partners
             </NavLink>
           </li>
           <li>
