@@ -1,5 +1,5 @@
 // src/router/index.tsx
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
 import Partners from "../pages/Partners";
@@ -10,45 +10,46 @@ import Shopping from "../pages/Shopping";
 import Privacy from "../pages/Privacy";
 import Contact from "../pages/Contact";
 import ExampleProfile from "../pages/Profile/ExampleProfile";
-export const router = createBrowserRouter([
+
+export const router = createHashRouter([
   {
     path: "/",
     element: <Layout />, // this includes your Navbar
     children: [
       {
-        path: "/", // Home page
+        index: true, // This makes it the default route
         element: <Home />,
       },
       {
-        path: "/partners",
+        path: "partners",
         element: <Partners />,
       },
       {
-        path: "/tryon",
+        path: "tryon",
         element: <TryOn />,
       },
       {
-        path: "/info",
+        path: "info",
         element: <Info />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/shopping",
+        path: "shopping",
         element: <Shopping />,
       },
       {
-        path: "/privacy",
+        path: "privacy",
         element: <Privacy />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/profile/:profilename",
+        path: "profile",
         element: <ExampleProfile />,
       },
     ],

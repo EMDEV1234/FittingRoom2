@@ -5,9 +5,31 @@
     <link rel="icon" href="/FTLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitting Room</title>
+    <style>
+      #root {
+        min-height: 100vh;
+      }
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading">Loading Fitting Room...</div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback error handling
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        document.getElementById('root').innerHTML = 
+          '<div style="padding: 20px; font-family: Arial;"><h1>Loading Error</h1><p>Failed to load the application. Please refresh the page.</p></div>';
+      });
+    </script>
   </body>
 </html>
