@@ -21,7 +21,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
+        "http://localhost:3001",  # Add port 3001 for development
         "http://0.0.0.0:3000", 
+        "http://0.0.0.0:3001",   # Add port 3001 for development
         "http://localhost:4009",
         "http://0.0.0.0:4009", 
         "http://fittingroom.tech",
@@ -119,3 +121,7 @@ async def tryon(person: UploadFile = File(...), cloth: UploadFile = File(...), g
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/results", StaticFiles(directory=RESULT_DIR), name="results")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

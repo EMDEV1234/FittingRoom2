@@ -8,7 +8,7 @@ export async function runVTON(
   formData.append("cloth", cloth);
   formData.append("garment_des", description);
 
-  // Use ingress routing to backend API
+  // Use proxy routing to backend API
   const response = await fetch("/api/tryon", {
     method: "POST",
     body: formData,
@@ -19,5 +19,6 @@ export async function runVTON(
   }
 
   const data = await response.json();
-  return `http://fittingroom.tech${data.output}`;
+  // Return the local result URL for development
+  return `http://localhost:8000${data.output}`;
 }
