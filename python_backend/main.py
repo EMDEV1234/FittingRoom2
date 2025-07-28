@@ -22,8 +22,14 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001",  # Add port 3001 for development
+        "http://localhost:3002",  # Add port 3002 for development
+        "http://localhost:3003",  # Add port 3003 for development
+        "http://localhost:3004",  # Add port 3004 for development
         "http://0.0.0.0:3000", 
         "http://0.0.0.0:3001",   # Add port 3001 for development
+        "http://0.0.0.0:3002",   # Add port 3002 for development
+        "http://0.0.0.0:3003",   # Add port 3003 for development
+        "http://0.0.0.0:3004",   # Add port 3004 for development
         "http://localhost:4009",
         "http://0.0.0.0:4009", 
         "http://fittingroom.tech",
@@ -82,41 +88,82 @@ async def preview_heic(file: UploadFile = File(...)):
         return JSONResponse(content={"error": "HEIC conversion failed"}, status_code=500)
 @app.post("/api/tryon")
 async def tryon(person: UploadFile = File(...), cloth: UploadFile = File(...), garment_des: str = Form("shirt")):
-    # production server
-    client = Client(f"https://{MAIN_SERVER}-7860.proxy.runpod.net/")
-    # dev server
-    #client = Client(DEV_SERVER)
+    try:
+        # Save uploaded files
+        person_path = os.path.join(UPLOAD_DIR, f"person_{uuid.uuid4().hex}.jpg")
+        cloth_path = os.path.join(UPLOAD_DIR, f"cloth_{uuid.uuid4().hex}.jpg")
 
+        with open(person_path, "wb") as f:
+            shutil.copyfileobj(person.file, f)
 
-    # 2. Define converted JPEG paths
-    person_path = os.path.join(UPLOAD_DIR, f"person_{uuid.uuid4().hex}.jpg")
-    cloth_path = os.path.join(UPLOAD_DIR, f"cloth_{uuid.uuid4().hex}.jpg")
+        with open(cloth_path, "wb") as f:
+            shutil.copyfileobj(cloth.file, f)
 
-    with open(person_path, "wb") as f:
-        shutil.copyfileobj(person.file, f)
+        person_path = prepare_image(person_path)
+        cloth_path = prepare_image(cloth_path)
 
-    with open(cloth_path, "wb") as f:
-        shutil.copyfileobj(cloth.file, f)
-
-    person_path =prepare_image(person_path)
-    cloth_path =prepare_image(cloth_path)
-
-    result = client.predict(
-        dict={"background": gr_file(person_path), "layers": [], "composite": None},
-        garm_img=gr_file(cloth_path),
-        garment_des=garment_des,
-        is_checked=True,
-        is_checked_crop=False,
-        denoise_steps=35,
-        seed=42,
-        api_name="/tryon"
-    )
-    #save image locally
-    result_image_path = os.path.join(RESULT_DIR, f"result_{uuid.uuid4().hex}.png")
-    Image.open(result[0]).save(result_image_path)
-
-    #generated imaged path
-    return {"output": f"/results/{os.path.basename(result_image_path)}"}
+        print(f"Processing try-on with person: {person_path}, cloth: {cloth_path}")
+        
+        # First try to connect to AI service
+        try:
+            client = Client(f"https://{MAIN_SERVER}-7860.proxy.runpod.net/")
+            
+            result = client.predict(
+                dict={"background": gr_file(person_path), "layers": [], "composite": None},
+                garm_img=gr_file(cloth_path),
+                garment_des=garment_des,
+                is_checked=True,
+                is_checked_crop=False,
+                denoise_steps=35,
+                seed=42,
+                api_name="/tryon"
+            )
+            
+            # Save AI-generated result
+            result_image_path = os.path.join(RESULT_DIR, f"result_{uuid.uuid4().hex}.png")
+            Image.open(result[0]).save(result_image_path)
+            
+            print(f"AI Try-on completed successfully: {result_image_path}")
+            
+        except Exception as ai_error:
+            print(f"AI service failed: {str(ai_error)}")
+            print("Using fallback: returning person image as placeholder result")
+            
+            # Fallback: Copy person image as result for testing
+            result_image_path = os.path.join(RESULT_DIR, f"result_{uuid.uuid4().hex}.jpg")
+            
+            # Create a simple placeholder result by copying the person image
+            person_img = Image.open(person_path)
+            # Add a text overlay to indicate this is a placeholder
+            from PIL import ImageDraw, ImageFont
+            draw = ImageDraw.Draw(person_img)
+            
+            # Add placeholder text
+            try:
+                # Try to use a default font, but don't fail if not available
+                font = ImageFont.load_default()
+                draw.text((10, 10), "AI Service Unavailable - Placeholder Result", fill="red", font=font)
+            except:
+                draw.text((10, 10), "AI Service Unavailable", fill="red")
+            
+            person_img.save(result_image_path)
+            print(f"Placeholder result created: {result_image_path}")
+        
+        # Clean up uploaded files
+        try:
+            os.remove(person_path)
+            os.remove(cloth_path)
+        except:
+            pass
+        
+        return {"output": f"/results/{os.path.basename(result_image_path)}"}
+        
+    except Exception as e:
+        print(f"Try-on failed with error: {str(e)}")
+        return JSONResponse(
+            content={"error": f"Try-on processing failed: {str(e)}"}, 
+            status_code=500
+        )
 
 
 from fastapi.staticfiles import StaticFiles

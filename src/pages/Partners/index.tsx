@@ -178,11 +178,17 @@ const Partners: React.FC = () => {
 
       <div className={styles.socialImages}>
         <div className={styles.socialImageContainer}>
-          <img 
-            src={instagramImage} 
-            alt="Instagram"
-            className={`${styles.socialImage} ${styles.instagramImage}`}
-          />
+          <a 
+            href="https://www.instagram.com/fittingroomai?igsh=bGp2MHVybml0MzZt&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img 
+              src={instagramImage} 
+              alt="Instagram"
+              className={`${styles.socialImage} ${styles.instagramImage}`}
+            />
+          </a>
         </div>
         <div className={styles.socialImageContainer}>
           <img 

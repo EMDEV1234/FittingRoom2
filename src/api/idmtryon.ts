@@ -8,17 +8,40 @@ export async function runVTON(
   formData.append("cloth", cloth);
   formData.append("garment_des", description);
 
-  // Use proxy routing to backend API
-  const response = await fetch("/api/tryon", {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    // Use proxy routing to backend API
+    const response = await fetch("/api/tryon", {
+      method: "POST",
+      body: formData,
+    });
 
-  if (!response.ok) {
-    throw new Error("Try-on request failed");
+    if (!response.ok) {
+      // Try to get error details from the response
+      let errorMessage = "Try-on request failed";
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.error || errorMessage;
+      } catch {
+        errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+      }
+      throw new Error(errorMessage);
+    }
+
+    const data = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+    
+    if (!data.output) {
+      throw new Error("No output received from server");
+    }
+    
+    // Return the local result URL for development
+    return `http://localhost:8000${data.output}`;
+    
+  } catch (error) {
+    console.error("VTON API Error:", error);
+    throw error;
   }
-
-  const data = await response.json();
-  // Return the local result URL for development
-  return `http://localhost:8000${data.output}`;
 }
