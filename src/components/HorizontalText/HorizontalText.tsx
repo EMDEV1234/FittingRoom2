@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee, { MarqueeProps } from "react-fast-marquee";
+import Marquee, { type MarqueeProps } from "react-fast-marquee";
 import styles from "./HorizontalText.module.css";
 const HorizontalText: React.FC = () => {
   const marqueeProps: MarqueeProps = {
