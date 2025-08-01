@@ -30,6 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Debug file structure
+        run: |
+          echo "Checking src/assets/images/reveal_images directory:"
+          ls -la src/assets/images/reveal_images/
+          echo "Checking src/pages/Home directory:"
+          ls -la src/pages/Home/
+        
       - name: Build
         run: npm run build
         
