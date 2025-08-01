@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styles from "./index.module.css";
 import { NavLink } from "react-router-dom";
 
-const logo = "/FTLogo.png";
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,10 +12,7 @@ const Navbar: React.FC = () => {
     <header className={styles.navContainer}>
       <nav className={styles.navbar}>
         <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-          <span className={styles.logoContent}>
-            <img src={logo} alt="logo" className={styles.logoImage} />
-            Fitting Room
-          </span>
+          Fitting Room
         </NavLink>
 
         <button
