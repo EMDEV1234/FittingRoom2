@@ -5,11 +5,22 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/FittingRoom2/', // Set base path for GitHub Pages deployment
-  assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.GIF', '**/*.WEBP', '**/*.SVG'],
+  assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.GIF', '**/*.WEBP', '**/*.SVG', '**/*.ico'],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          // Keep favicon files in the root of dist folder without hashing
+          if (assetInfo.name && (assetInfo.name.includes('favicon') || assetInfo.name === 'FTLogo.png')) {
+            return '[name].[ext]';
+          }
+          return 'assets/[name]-[hash].[ext]';
+        }
+      }
+    }
   },
   server: {
     host: '0.0.0.0',
