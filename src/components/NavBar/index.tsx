@@ -12,7 +12,20 @@ const Navbar: React.FC = () => {
     <header className={styles.navContainer}>
       <nav className={styles.navbar}>
         <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-          Fitting Room
+          <span className={styles.logoContent}>
+            <img 
+              src="./FTLogo.png"
+              alt="Fitting Room Logo" 
+              className={styles.logoImage}
+              onError={(e) => {
+                console.error("Logo failed to load:", e);
+                console.error("Trying alternative path...");
+                e.currentTarget.src = "/FittingRoom2/FTLogo.png";
+              }}
+              onLoad={() => console.log("Logo loaded successfully")}
+            />
+            Fitting Room
+          </span>
         </NavLink>
 
         <button
