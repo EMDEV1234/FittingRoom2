@@ -19,12 +19,21 @@ import xImage from "./Below become a partner/X.jpg";
 
 const Partners: React.FC = () => {
   const [visibleLogos, setVisibleLogos] = useState<boolean[]>(new Array(9).fill(false));
+  const [showDescriptions, setShowDescriptions] = useState<boolean[]>(new Array(9).fill(false));
   
   const generateUUID = (): string =>
     Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
 
   const handleGetInTouch = () => {
     window.location.href = 'mailto:info@fittingroom.com?subject=Partnership Inquiry&body=Hi, I am interested in becoming a partner with Fitting Room. Please provide more information about partnership opportunities.';
+  };
+
+  const toggleDescription = (index: number) => {
+    setShowDescriptions(prev => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
   };
 
   useEffect(() => {
@@ -133,9 +142,10 @@ const Partners: React.FC = () => {
                 src={partner.image} 
                 alt={partner.name}
                 className={styles.floatingLogo}
+                onClick={() => toggleDescription(index)}
               />
             </div>
-            <div className={styles.partnerInfo}>
+            <div className={`${styles.partnerInfo} ${showDescriptions[index] ? styles.show : ''}`}>
               <h3 className={styles.partnerTitle}>{partner.name}</h3>
               <p className={styles.partnerDescription}>{partner.description}</p>
             </div>
